@@ -1,0 +1,38 @@
+Name:                urm
+Version:             0.1.0.0
+-- synopsis:
+-- description:
+License:             MIT
+License-File:        LICENSE
+Author:              Stéphane Vialette
+Maintainer:          vialette@u-pem.fr
+-- copyright:
+Category:            Math
+Build-Type:          Simple
+Extra-Source-Files:  README.md
+Cabal-Version:       >=1.22
+
+Library
+  ghc-options: -Wall -Werror -O2
+  Default-Language: Haskell2010
+  Hs-Source-Dirs: src
+  Build-Depends: base >=4.8
+               , containers >=0.5
+  Exposed-Modules: Data.URM.Instruction
+                 , Data.URM.Prog
+                 , Data.URM.Reg
+                 , Data.URM.RegIndex
+                 , Data.URM.Repository
+                 , Data.URM.RunTime
+                 , Data.URM.State
+                 , Data.URM.StateView
+  Other-Modules: Data.URM.Utils.Zipper
+
+Executable test
+  Main-Is: Test.hs
+  Hs-Source-Dirs: src
+  ghc-options: -Wall -Werror -O2
+  Default-Language: Haskell2010
+  Build-Depends: base >= 4.8
+               , containers >= 0.5 && < 0.6
+               , urm >= 0.1
